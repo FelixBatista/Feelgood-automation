@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1" type="plugin" group="content" method="upgrade">
+<name>Feelgood automation</name>
+<creationDate>24-04-11</creationDate>
+<author>Felix Batista</author>
+<authorEmail>felixb.neto@gmail.com</authorEmail>
+<authorUrl>https://github.com/FelixBatista</authorUrl>
+<copyright>Copyright</copyright>
+<license>GPLv2</license>
+<version>1</version>
+<description>Automatically generates a filled spreadsheet on feelgood template with all the employees info from Hailey HR.</description>
+<files>
+   <filename plugin="feelgoodauto">feelgoodauto.php</filename>
+   <filename>feelgoodauto_handler.php</filename>
+</files>
+<config>
+   <fields name="params">
+      <fieldset name="basic">
+            <field name="webhook_url" type="text" default="" label="Webhook URL" description="Enter the URL to send webhooks to." size="100"/>
+            <field name="webhook_method" type="list" default="POST" label="Webhook Method" description="Choose the HTTP method for the webhook.">
+               <option value="POST">POST</option>
+               <option value="GET">GET</option>
+            </field>
+      </fieldset>
+   </fields>
+</config>
+<updateservers>
+   <server type="extension" name="feelgoodauto">https://github.com/FelixBatista/joomlaWebhooks/blob/master/feelgoodauto.xml</server>
+</updateservers>
+</extension>
